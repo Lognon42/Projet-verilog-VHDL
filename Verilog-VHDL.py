@@ -1,3 +1,10 @@
+"""
+Code pour convertir des fichiers Verilog en VHDL
+Loïc PAGNON
+22/11/2024
+A faire :
+"""
+
 import re
 from tkinter import Tk, filedialog
 
