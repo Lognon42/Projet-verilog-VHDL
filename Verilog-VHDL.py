@@ -1,13 +1,3 @@
-"""
-Code pour convertir des fichiers Verilog en VHDL
-Loïc PAGNON
-22/11/2024
-A faire :
-
-
-modif
-"""
-
 import re
 from tkinter import Tk, filedialog
 
@@ -36,31 +26,61 @@ except Exception as e:
 # Liste pour stocker les lignes modifiées
 modified_lines = []
 
+# Ajouter les bibliothèques nécessaires au début du fichier VHDL
+vhdl_header = """\
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+"""
+modified_lines.append(vhdl_header)
+
+# Variables pour détecter le nom du module
+module_name = None
+ports_list = []
+
 # Parcourir chaque ligne du fichier
 for line in lines:
     line = line.strip()  # Supprimer les espaces inutiles autour de la ligne
 
-    # Supprimer les lignes contenant 'wire'
+    # Identifier le nom du module et les ports
+    module_match = re.match(r"module\s+(\w+)\s*\((.*)\);", line)
+    if module_match:
+        module_name = module_match.group(1)
+        ports = module_match.group(2)
+        ports_list = [port.strip() for port in ports.split(",")]
+        modified_lines.append(f"entity {module_name} is\n    port (\n")
+        continue
+
+    # Gérer la déclaration des ports
+    for port in ports_list:
+        port_match = re.match(r"(input|output)\s*(\[.*\])?\s*(\w+)", port)
+        if port_match:
+            direction = "in" if port_match.group(1) == "input" else "out"
+            size = port_match.group(2)
+            name = port_match.group(3)
+            if size:
+                size = size.strip("[]").split(":")
+                high, low = size[0], size[1]
+                modified_lines.append(f"        {name} : {direction} std_logic_vector({high} downto {low});\n")
+            else:
+                modified_lines.append(f"        {name} : {direction} std_logic;\n")
+    ports_list = []  # Réinitialiser après traitement
+
+    # Ajouter "end entity" une fois les ports définis
+    if module_match:
+        modified_lines.append("    );\nend entity;\n\narchitecture Behavioral of " + module_name + " is\nbegin\nend Behavioral;\n")
+        continue
+
+    # Supprimer les déclarations wire
     if re.match(r"\s*wire", line):
-        continue  # Passer à la ligne suivante si c'est une déclaration wire
-
-    # Conversion des ports Verilog groupés (suppression des répétitions du type)
-    line = re.sub(r"(input|output|inout)\s+([^;]+);", 
-                  lambda m: f"{', '.join(m.group(2).split())} : {m.group(1)} std_logic;", 
-                  line)
-
-    # Conversion du module Verilog en entité VHDL
-    line = re.sub(r"module\s+(\w+)\s*\((.*)\);", r"entity \1 is\nport (\2);", line)
-    line = re.sub(r"endmodule", r"end entity;", line)
-
-    # Conversion des déclarations de variables
-    line = re.sub(r"input\s+(\[.*\])?\s*(\w+);", r"\2 : in std_logic;", line)
-    line = re.sub(r"output\s+(\[.*\])?\s*(\w+);", r"\2 : out std_logic;", line)
+        continue
 
     # Conversion des assignations
     line = re.sub(r"assign\s+(\w+)\s*=\s*(.*);", r"\1 <= \2;", line)
 
-    # Conversion des structures conditionnelles
+    # Conversion des blocs conditionnels
     line = re.sub(r"if\s*\((.*)\)\s*begin", r"if (\1) then", line)
     line = re.sub(r"end\s*else\s*if", r"elsif", line)
     line = re.sub(r"end\s*else", r"else", line)
@@ -74,21 +94,9 @@ for line in lines:
     line = re.sub(r"for\s+(\w+)\s*=\s*(\d+)\s*:\s*(\d+)\s*begin", r"for \1 in \2 to \3 loop", line)
     line = re.sub(r"end\s*for", r"end loop;", line)
 
-    # Ajouter un saut de ligne après chaque instruction convertie
-    if line:  # Si la ligne n'est pas vide, ajouter un saut de ligne
-        modified_lines.append(line + "\n")
-
-# Ajouter des retours à la ligne pour les déclarations de variables
-final_lines = []
-for line in modified_lines:
-    # Éviter de répéter std_logic dans les ports
-    line = re.sub(r"(\w+,\s*\w+):\s*std_logic\s*:.*std_logic;", r"\1 : std_logic;", line)
-    
-    # Ajouter un saut de ligne après chaque déclaration de variable
-    if re.match(r".*:\s*std_logic;", line):
-        final_lines.append(line + "\n")  # Ajouter des sauts de ligne après chaque déclaration
-    else:
-        final_lines.append(line)  # Conserver les autres lignes telles quelles
+    # Ajouter la ligne modifiée si elle n'est pas vide
+    if line:
+        modified_lines.append("    " + line + "\n")  # Ajoutez une indentation pour les blocs de code VHDL
 
 # Demander à l'utilisateur de sélectionner un dossier de destination
 destination_folder = filedialog.askdirectory(title="Sélectionnez un dossier de destination")
@@ -110,7 +118,7 @@ if not file_name:
 # Sauvegarder le contenu converti dans le fichier spécifié
 try:
     with open(file_name, 'w') as file:
-        file.writelines(final_lines)
+        file.writelines(modified_lines)
     print(f"Fichier VHDL sauvegardé sous : {file_name}")
 except Exception as e:
     print(f"Erreur lors de la sauvegarde du fichier : {e}")
