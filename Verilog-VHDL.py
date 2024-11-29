@@ -3,6 +3,9 @@ Code pour convertir des fichiers Verilog en VHDL
 Loïc PAGNON
 22/11/2024
 A faire :
+
+
+modif
 """
 
 import re
