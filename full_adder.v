@@ -8,15 +8,11 @@ port (
     B : in std_logic;
     Ci : in std_logic;
     S : out std_logic;
-    Co : out std_logic
-);
+    Co : out std_logic);
 end full_adder;
 
 architecture full_adder_struct of full_adder is
-    signal w1 : std_logic;
-    signal w2 : std_logic;
-    signal w3 : std_logic;
-    signal w4 : std_logic;
+    signal w1,w2,w3,w4 : std_logic;
 begin
     w1 <= A xor B;
     S <= w1 xor Ci;
