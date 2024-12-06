@@ -5,6 +5,6 @@ Loïc PAGNON
 A faire :
 """
 
-from Verilog_VHDL import conversion
+from  import conversion
 
 conversion()
