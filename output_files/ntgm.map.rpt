@@ -1,0 +1,413 @@
+Analysis & Synthesis report for ntgm
+Fri Nov 29 12:13:41 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-----------------------------+------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Fri Nov 29 12:13:41 2024              ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name               ; ntgm                                           ;
+; Top-level Entity Name       ; ntgm                                           ;
+; Family                      ; Cyclone V                                      ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                  ;
++--------------------------------------------------------------------------------+
+Option        : Device
+Setting       : 5CGXFC7C7F23C8
+Default Value : 
+
+Option        : Top-level entity name
+Setting       : ntgm
+Default Value : ntgm
+
+Option        : Family name
+Setting       : Cyclone V
+Default Value : Cyclone V
+
+Option        : Use smart compilation
+Setting       : Off
+Default Value : Off
+
+Option        : Enable parallel Assembler and Timing Analyzer during compilation
+Setting       : On
+Default Value : On
+
+Option        : Enable compact report table
+Setting       : Off
+Default Value : Off
+
+Option        : Restructure Multiplexers
+Setting       : Auto
+Default Value : Auto
+
+Option        : MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care
+Setting       : Off
+Default Value : Off
+
+Option        : Create Debugging Nodes for IP Cores
+Setting       : Off
+Default Value : Off
+
+Option        : Preserve fewer node names
+Setting       : On
+Default Value : On
+
+Option        : Intel FPGA IP Evaluation Mode
+Setting       : Enable
+Default Value : Enable
+
+Option        : Verilog Version
+Setting       : Verilog_2001
+Default Value : Verilog_2001
+
+Option        : VHDL Version
+Setting       : VHDL_1993
+Default Value : VHDL_1993
+
+Option        : State Machine Processing
+Setting       : Auto
+Default Value : Auto
+
+Option        : Safe State Machine
+Setting       : Off
+Default Value : Off
+
+Option        : Extract Verilog State Machines
+Setting       : On
+Default Value : On
+
+Option        : Extract VHDL State Machines
+Setting       : On
+Default Value : On
+
+Option        : Ignore Verilog initial constructs
+Setting       : Off
+Default Value : Off
+
+Option        : Iteration limit for constant Verilog loops
+Setting       : 5000
+Default Value : 5000
+
+Option        : Iteration limit for non-constant Verilog loops
+Setting       : 250
+Default Value : 250
+
+Option        : Add Pass-Through Logic to Inferred RAMs
+Setting       : On
+Default Value : On
+
+Option        : Infer RAMs from Raw Logic
+Setting       : On
+Default Value : On
+
+Option        : Parallel Synthesis
+Setting       : On
+Default Value : On
+
+Option        : DSP Block Balancing
+Setting       : Auto
+Default Value : Auto
+
+Option        : NOT Gate Push-Back
+Setting       : On
+Default Value : On
+
+Option        : Power-Up Don't Care
+Setting       : On
+Default Value : On
+
+Option        : Remove Redundant Logic Cells
+Setting       : Off
+Default Value : Off
+
+Option        : Remove Duplicate Registers
+Setting       : On
+Default Value : On
+
+Option        : Ignore CARRY Buffers
+Setting       : Off
+Default Value : Off
+
+Option        : Ignore CASCADE Buffers
+Setting       : Off
+Default Value : Off
+
+Option        : Ignore GLOBAL Buffers
+Setting       : Off
+Default Value : Off
+
+Option        : Ignore ROW GLOBAL Buffers
+Setting       : Off
+Default Value : Off
+
+Option        : Ignore LCELL Buffers
+Setting       : Off
+Default Value : Off
+
+Option        : Ignore SOFT Buffers
+Setting       : On
+Default Value : On
+
+Option        : Limit AHDL Integers to 32 Bits
+Setting       : Off
+Default Value : Off
+
+Option        : Optimization Technique
+Setting       : Balanced
+Default Value : Balanced
+
+Option        : Carry Chain Length
+Setting       : 70
+Default Value : 70
+
+Option        : Auto Carry Chains
+Setting       : On
+Default Value : On
+
+Option        : Auto Open-Drain Pins
+Setting       : On
+Default Value : On
+
+Option        : Perform WYSIWYG Primitive Resynthesis
+Setting       : Off
+Default Value : Off
+
+Option        : Auto ROM Replacement
+Setting       : On
+Default Value : On
+
+Option        : Auto RAM Replacement
+Setting       : On
+Default Value : On
+
+Option        : Auto DSP Block Replacement
+Setting       : On
+Default Value : On
+
+Option        : Auto Shift Register Replacement
+Setting       : Auto
+Default Value : Auto
+
+Option        : Allow Shift Register Merging across Hierarchies
+Setting       : Auto
+Default Value : Auto
+
+Option        : Auto Clock Enable Replacement
+Setting       : On
+Default Value : On
+
+Option        : Strict RAM Replacement
+Setting       : Off
+Default Value : Off
+
+Option        : Allow Synchronous Control Signals
+Setting       : On
+Default Value : On
+
+Option        : Force Use of Synchronous Clear Signals
+Setting       : Off
+Default Value : Off
+
+Option        : Auto Resource Sharing
+Setting       : Off
+Default Value : Off
+
+Option        : Allow Any RAM Size For Recognition
+Setting       : Off
+Default Value : Off
+
+Option        : Allow Any ROM Size For Recognition
+Setting       : Off
+Default Value : Off
+
+Option        : Allow Any Shift Register Size For Recognition
+Setting       : Off
+Default Value : Off
+
+Option        : Use LogicLock Constraints during Resource Balancing
+Setting       : On
+Default Value : On
+
+Option        : Ignore translate_off and synthesis_off directives
+Setting       : Off
+Default Value : Off
+
+Option        : Timing-Driven Synthesis
+Setting       : On
+Default Value : On
+
+Option        : Report Parameter Settings
+Setting       : On
+Default Value : On
+
+Option        : Report Source Assignments
+Setting       : On
+Default Value : On
+
+Option        : Report Connectivity Checks
+Setting       : On
+Default Value : On
+
+Option        : Ignore Maximum Fan-Out Assignments
+Setting       : Off
+Default Value : Off
+
+Option        : Synchronization Register Chain Length
+Setting       : 3
+Default Value : 3
+
+Option        : Power Optimization During Synthesis
+Setting       : Normal compilation
+Default Value : Normal compilation
+
+Option        : HDL message level
+Setting       : Level2
+Default Value : Level2
+
+Option        : Suppress Register Optimization Related Messages
+Setting       : Off
+Default Value : Off
+
+Option        : Number of Removed Registers Reported in Synthesis Report
+Setting       : 5000
+Default Value : 5000
+
+Option        : Number of Swept Nodes Reported in Synthesis Report
+Setting       : 5000
+Default Value : 5000
+
+Option        : Number of Inverted Registers Reported in Synthesis Report
+Setting       : 100
+Default Value : 100
+
+Option        : Clock MUX Protection
+Setting       : On
+Default Value : On
+
+Option        : Auto Gated Clock Conversion
+Setting       : Off
+Default Value : Off
+
+Option        : Block Design Naming
+Setting       : Auto
+Default Value : Auto
+
+Option        : SDC constraint protection
+Setting       : Off
+Default Value : Off
+
+Option        : Synthesis Effort
+Setting       : Auto
+Default Value : Auto
+
+Option        : Shift Register Replacement - Allow Asynchronous Clear Signal
+Setting       : On
+Default Value : On
+
+Option        : Pre-Mapping Resynthesis Optimization
+Setting       : Off
+Default Value : Off
+
+Option        : Analysis & Synthesis Message Level
+Setting       : Medium
+Default Value : Medium
+
+Option        : Disable Register Merging Across Hierarchies
+Setting       : Auto
+Default Value : Auto
+
+Option        : Resource Aware Inference For Block RAM
+Setting       : On
+Default Value : On
+
+Option        : Automatic Parallel Synthesis
+Setting       : On
+Default Value : On
+
+Option        : Partial Reconfiguration Bitstream ID
+Setting       : Off
+Default Value : Off
++--------------------------------------------------------------------------------+
+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Nov 29 12:13:34 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ntgm -c ntgm
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ntgm.vhd
+    Info (12022): Found design unit 1: full_adder-full_adder_struct File: C:/Users/Utilisateur/Desktop/CPE/Python/Python/Projet-verilog-VHDL/ntgm.vhd Line: 14
+    Info (12023): Found entity 1: full_adder File: C:/Users/Utilisateur/Desktop/CPE/Python/Python/Projet-verilog-VHDL/ntgm.vhd Line: 5
+Error (12007): Top-level design entity "ntgm" is undefined
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4836 megabytes
+    Error: Processing ended: Fri Nov 29 12:13:42 2024
+    Error: Elapsed time: 00:00:08
+    Error: Total CPU time (on all processors): 00:00:17
+
+

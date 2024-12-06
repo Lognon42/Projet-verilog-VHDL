@@ -1,0 +1,186 @@
+Flow report for ntgm
+Fri Nov 29 12:13:41 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------------+------------------------------------------------+
+; Flow Status                 ; Flow Failed - Fri Nov 29 12:13:41 2024         ;
+; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name               ; ntgm                                           ;
+; Top-level Entity Name       ; ntgm                                           ;
+; Family                      ; Cyclone V                                      ;
+; Device                      ; 5CGXFC7C7F23C8                                 ;
+; Timing Models               ; Final                                          ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/29/2024 12:13:34 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; ntgm                ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                               ;
++--------------------------------------------------------------------------------+
+Assignment Name : COMPILER_SIGNATURE_ID
+Value           : 929340864469.173287881413000
+Default Value   : --
+Entity Name     : --
+Section Id      : --
+
+Assignment Name : EDA_GENERATE_FUNCTIONAL_NETLIST
+Value           : Off
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_board_design_timing
+
+Assignment Name : EDA_GENERATE_FUNCTIONAL_NETLIST
+Value           : Off
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_board_design_boundary_scan
+
+Assignment Name : EDA_GENERATE_FUNCTIONAL_NETLIST
+Value           : Off
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_board_design_signal_integrity
+
+Assignment Name : EDA_GENERATE_FUNCTIONAL_NETLIST
+Value           : Off
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_board_design_symbol
+
+Assignment Name : EDA_OUTPUT_DATA_FORMAT
+Value           : Verilog Hdl
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_simulation
+
+Assignment Name : EDA_SIMULATION_TOOL
+Value           : Questa Intel FPGA (Verilog)
+Default Value   : <None>
+Entity Name     : --
+Section Id      : --
+
+Assignment Name : EDA_TIME_SCALE
+Value           : 1 ps
+Default Value   : --
+Entity Name     : --
+Section Id      : eda_simulation
+
+Assignment Name : PARTITION_COLOR
+Value           : -- (Not supported for targeted family)
+Default Value   : --
+Entity Name     : --
+Section Id      : Top
+
+Assignment Name : PARTITION_FITTER_PRESERVATION_LEVEL
+Value           : -- (Not supported for targeted family)
+Default Value   : --
+Entity Name     : --
+Section Id      : Top
+
+Assignment Name : PARTITION_NETLIST_TYPE
+Value           : -- (Not supported for targeted family)
+Default Value   : --
+Entity Name     : --
+Section Id      : Top
+
+Assignment Name : PROJECT_OUTPUT_DIRECTORY
+Value           : output_files
+Default Value   : --
+Entity Name     : --
+Section Id      : --
++--------------------------------------------------------------------------------+
+
+
+
++--------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                              ;
++--------------------------------------------------------------------------------+
+Module Name                        : Analysis & Synthesis
+Elapsed Time                       : 00:00:07
+Average Processors Used            : 1.0
+Peak Virtual Memory                : 4836 MB
+Total CPU Time (on all processors) : 00:00:17
+
+Module Name                        : Total
+Elapsed Time                       : 00:00:07
+Average Processors Used            : --
+Peak Virtual Memory                : --
+Total CPU Time (on all processors) : 00:00:17
++--------------------------------------------------------------------------------+
+
+
+
++--------------------------------------------------------------------------------+
+; Flow OS Summary                                                                ;
++--------------------------------------------------------------------------------+
+Module Name      : Analysis & Synthesis
+Machine Hostname : DESKTOP-MEB6S96
+OS Name          : Windows 10
+OS Version       : 10.0
+Processor type   : x86_64
++--------------------------------------------------------------------------------+
+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off ntgm -c ntgm
+
+
+
